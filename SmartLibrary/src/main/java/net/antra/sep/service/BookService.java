@@ -1,18 +1,21 @@
 package net.antra.sep.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import net.antra.sep.pojo.Book;
+import net.antra.sep.repo.BookRepository;
 
 public class BookService {
 
+	private BookRepository br = new BookRepository();
+	
 	public List<Book> getBooks() {
-		List<Book> bookList = new ArrayList<>();
-		bookList.add(new Book("Beartown","978-1501160769","Fredrik",10D));
-		bookList.add(new Book("Spring in Action","978-1617291203","Craig",30.82D));
-		bookList.add(new Book("Head First Servlets","978-0596516680","Bryan",40.15D));
-		return bookList;
+		return br.getBooks();
+	}
+
+	public Book getBookByIsbn(String isbn) {
+		
+		return br.getBookByKey(isbn);
 	}
 
 }
