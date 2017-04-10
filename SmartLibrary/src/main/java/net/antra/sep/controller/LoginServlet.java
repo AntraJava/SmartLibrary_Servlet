@@ -1,4 +1,4 @@
-package net.antra.sep;
+package net.antra.sep.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -31,5 +31,10 @@ public class LoginServlet extends HttpServlet {
 			req.setAttribute("invalidUser", true);
 			req.getRequestDispatcher("/").forward(req, resp);
 		}
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("/").forward(req, resp);
 	}
 }

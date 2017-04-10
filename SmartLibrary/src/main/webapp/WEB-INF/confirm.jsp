@@ -15,6 +15,6 @@ Your Order Number is : ${orderNum}
 <c:if test="${shoppingCart.totalPrice == 0 }">
 No order is placed. Cannot replace the same order.
 </c:if>
-<a href="/SmartLibrary/main">Continue</a>
+<a href="main">Continue</a>
 </body>
 </html>

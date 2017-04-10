@@ -10,7 +10,8 @@
 <Strong>Hello, ${user.userName}</Strong> 
 
 <br>
-<a href="/SmartLibrary/logout">logout</a>
+<a href="logout">logout</a>
+
 <br><br><br>
 
 	<table align="center">
@@ -22,7 +23,7 @@
 			<td>Action</td>
 		</tr>
 		<c:forEach items="${bookList}" var="book">
-			<form action="/SmartLibrary/addToCart" method="post" id="form_${book.isbn}">
+			<form action=<c:url value="/addToCart"/>  method="post" id="form_${book.isbn}">
 				<input type="hidden" value="${book.isbn}" name="isbn"/>
 			</form>
 			<tr>
@@ -39,10 +40,10 @@
 You have ${shoppingCart.size()} items in your cart. <br>
 The total is <fmt:formatNumber type="CURRENCY">${shoppingCart.totalPrice}</fmt:formatNumber>.
 <br>
-<a href="/SmartLibrary/checkout"/>Checkout</a>
-<c:if test="${!error}">
-<p style="color: red">${error}</p>
-</c:if>
+
+<a href="checkout">Checkout</a>
+
+<c:if test="${!error}"><p style="color: red">${error}</p></c:if>
 </div>
 </body>
 </html>

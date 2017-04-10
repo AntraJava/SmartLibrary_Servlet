@@ -1,4 +1,4 @@
-package net.antra.sep;
+package net.antra.sep.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;

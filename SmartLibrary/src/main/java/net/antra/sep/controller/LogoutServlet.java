@@ -1,4 +1,4 @@
-package net.antra.sep;
+package net.antra.sep.controller;
 
 import java.io.IOException;
 
@@ -18,6 +18,6 @@ public class LogoutServlet extends HttpServlet {
 		if (session != null) {
 		    session.invalidate();
 		}
-		resp.sendRedirect("/SmartLibrary");
+		resp.sendRedirect("login");
 	}
 }

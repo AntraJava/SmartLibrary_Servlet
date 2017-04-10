@@ -10,7 +10,7 @@
 <Strong>This is your shopping cart</Strong><br>
 
 <Strong>Hello, ${user.userName}</Strong> <br>
-<a href="/SmartLibrary/logout">logout</a>
+<a href=<c:url value="logout"/>>logout</a>
 
 <br><br>
 
@@ -22,7 +22,7 @@
 			<td width="20%">Price*Quantity</td>
 		</tr>
 		<c:forEach items="${shoppingCart.bookAdded}" var="bookEntry">
-			<form action="/SmartLibrary/updateCart" method="post" id="form_${bookEntry.key.isbn}">
+			<form action=<c:url value="/updateCart"/> method="post" id="form_${bookEntry.key.isbn}">
 				<input type="hidden" value="${bookEntry.key.isbn}" name="isbn"/>
 			<tr>
 				<td>${bookEntry.key.title}</td>

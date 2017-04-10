@@ -10,7 +10,7 @@
 <Strong>Smart Library</Strong><br>
 
 <c:if test="${invalidUser}"><p style="color: red">Incorrect User Name or Password</p></c:if>
-    <form action="/SmartLibrary/login" method="post">
+    <form action=<c:url value="/login"/> method="post">
     <table align="center">
     	<tr>
     		<td>
