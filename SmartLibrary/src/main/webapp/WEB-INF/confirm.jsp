@@ -6,7 +6,7 @@
 
 <c:if test="${shoppingCart.totalPrice != 0 }">
 Order Placed!
-Your user information : name: ${user.userName}, id :${user.id}
+<%-- Your user information : name: ${user.userName}, id :${user.id} --%>
 Your Order Number is : ${orderNum}
 <p style="margin-top: 20px">The total is <fmt:formatNumber type="CURRENCY">${shoppingCart.totalPrice}</fmt:formatNumber>.</p>
 </c:if>
