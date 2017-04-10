@@ -16,7 +16,7 @@ import net.antra.sep.pojo.Cart;
 import net.antra.sep.service.BookService;
 
 @WebServlet("/placeOrder")
-public class Order extends HttpServlet {
+public class OrderServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		

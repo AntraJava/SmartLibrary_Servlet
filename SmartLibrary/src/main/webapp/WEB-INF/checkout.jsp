@@ -18,16 +18,18 @@
 			<td width="10%">Price*Quantity</td>
 		</tr>
 		<c:forEach items="${shoppingCart.bookAdded}" var="bookEntry">
+			<form action="/SmartLibrary/updateCart" method="post" id="form_${bookEntry.key.isbn}">
+				<input type="hidden" value="${bookEntry.key.isbn}" name="isbn"/>
 			<tr>
 				<td>${bookEntry.key.title}</td>
 				<td>${bookEntry.key.author}</td>
 				<td>${bookEntry.key.isbn}</td>
-				<td>${bookEntry.key.price} * ${bookEntry.value}</td>
-				
+				<td>${bookEntry.key.price} * <input value="${bookEntry.value}" style="width:20px" name="newValue_${bookEntry.key.isbn}"><button form="form_${bookEntry.key.isbn}">Update</button></td>
 			</tr>
+			</form>
 		</c:forEach>
 	</table>
-<p style="margin-top: 20px">	The total is <fmt:formatNumber type="CURRENCY">${shoppingCart.totalPrice}</fmt:formatNumber>.</p>
+<p style="margin-top: 20px">The total is <fmt:formatNumber type="CURRENCY">${shoppingCart.totalPrice}</fmt:formatNumber>.</p>
 
 </br>
 <a href="hi2" style="margin-top: 10px">Cancel</a>
