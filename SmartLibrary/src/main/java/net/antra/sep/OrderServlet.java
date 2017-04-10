@@ -19,12 +19,13 @@ import net.antra.sep.service.BookService;
 public class OrderServlet extends HttpServlet {
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		
-		HttpSession session = req.getSession(false);
-		if (session != null) {
-		    session.invalidate();
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {	
+		req.setAttribute("orderNum", 87654321);
+		req.getRequestDispatcher("/WEB-INF/confirm.jsp").forward(req, resp);
+		Cart cart = (Cart)req.getSession().getAttribute("shoppingCart");
+		if(cart!=null){
+			cart.clear();
 		}
-		resp.sendRedirect("/SmartLibrary");
 	}
 	
 }

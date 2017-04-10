@@ -4,18 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SmartLibrary - Cart - Checkout</title>
+<title>SmartLibrary</title>
 </head>
-<body>
-<Strong>This is your shopping cart</Strong></br>
-</br></br>
+<body style="text-align: center;">
+<Strong>This is your shopping cart</Strong><br>
 
-	<table width="80%">
+<Strong>Hello, ${user.userName}</Strong> <br>
+<a href="/SmartLibrary/logout">logout</a>
+
+<br><br>
+
+	<table align="center">
 		<tr>
 			<td width="20%">Title</td>
 			<td width="20%">Author</td>
 			<td width="20%">ISBN</td>
-			<td width="10%">Price*Quantity</td>
+			<td width="20%">Price*Quantity</td>
 		</tr>
 		<c:forEach items="${shoppingCart.bookAdded}" var="bookEntry">
 			<form action="/SmartLibrary/updateCart" method="post" id="form_${bookEntry.key.isbn}">
@@ -31,8 +35,9 @@
 	</table>
 <p style="margin-top: 20px">The total is <fmt:formatNumber type="CURRENCY">${shoppingCart.totalPrice}</fmt:formatNumber>.</p>
 
-</br>
-<a href="hi2" style="margin-top: 10px">Cancel</a>
+<br>
+
+<a href="main" style="margin-top: 10px">Cancel</a><br>
 <a href="placeOrder">Place Order</a>
 </div>
 </body>

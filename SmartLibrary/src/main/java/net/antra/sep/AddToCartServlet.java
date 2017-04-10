@@ -22,7 +22,7 @@ public class AddToCartServlet extends HttpServlet {
 		BookService service = new BookService();
 		Book book = service.getBookByIsbn(isbn);
 		cart.add( book);
-		resp.sendRedirect("hi2");
+		resp.sendRedirect("main");
 	}
 	
 }

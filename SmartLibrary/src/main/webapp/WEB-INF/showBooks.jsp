@@ -6,13 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SmartLibrary</title>
 </head>
-<body>
-<Strong>Hello, Welcome!</Strong></br>
+<body style="text-align: center;">
+<Strong>Hello, ${user.userName}</Strong> 
 
-This is a list of books we have now.
-</br></br>
+<br>
+<a href="/SmartLibrary/logout">logout</a>
+<br><br><br>
 
-	<table width="80%">
+	<table align="center">
 		<tr>
 			<td width="20%">Title</td>
 			<td width="20%">Author</td>
@@ -35,9 +36,9 @@ This is a list of books we have now.
 	</table>
 	
 <div style="margin-top: 100px">
-You have ${shoppingCart.size()} items in your cart. </br>
+You have ${shoppingCart.size()} items in your cart. <br>
 The total is <fmt:formatNumber type="CURRENCY">${shoppingCart.totalPrice}</fmt:formatNumber>.
-</br>
+<br>
 <a href="/SmartLibrary/checkout"/>Checkout</a>
 <c:if test="${!error}">
 <p style="color: red">${error}</p>

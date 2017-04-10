@@ -48,5 +48,9 @@ public class  Cart {
 		}
 		
 	}
+
+	public void clear() {
+		bookAdded.clear();
+	}
 	
 }

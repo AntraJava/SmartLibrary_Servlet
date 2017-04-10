@@ -14,7 +14,7 @@ import net.antra.sep.pojo.Book;
 import net.antra.sep.pojo.Cart;
 import net.antra.sep.service.BookService;
 
-@WebServlet(value = {"/",""})
+@WebServlet(value = {"/main"})
 public class MainServlet extends HttpServlet {
 
 	@Override
@@ -27,5 +27,8 @@ public class MainServlet extends HttpServlet {
 		}
 		req.getRequestDispatcher("/WEB-INF/showBooks.jsp").forward(req, resp);
 	}
-	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		
+		doGet(req,resp);
+	}
 }
